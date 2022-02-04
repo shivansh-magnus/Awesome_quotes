@@ -11,10 +11,6 @@ class QuoteList extends StatefulWidget {
   _QuoteListState createState() => _QuoteListState();
 }
 
-/*'Be yourself , everyone else is already taken .',
-    'I have nothing to declare except my genius.',
-    'The truth is rarely pure and never simple.' */
-
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
     Quote(
@@ -25,7 +21,13 @@ class _QuoteListState extends State<QuoteList> {
         author: 'Oscar Wilde'),
     Quote(
         text: 'The truth is rarely pure and never simple. ',
-        author: 'Oscar Wilde')
+        author: 'Oscar Wilde'),
+    Quote(
+        author: 'El Capone',
+        text:
+            'You can go a long way with a smile. You can go a lot farther with a smile and a gun.'),
+    Quote(
+        text: 'Courage is grace under pressure. .', author: 'Ernest Hemingway'),
   ];
 
   @override
