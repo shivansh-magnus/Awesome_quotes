@@ -27,6 +27,36 @@ class _QuoteListState extends State<QuoteList> {
         author: 'Oscar Wilde')
   ];
 
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              quote.text,
+              style: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 16.0,
+              ),
+            ),
+            const SizedBox(height: 6.0),
+            Text(
+              quote.author,
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.grey[600],
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,9 +67,7 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes
-            .map((quote) => Text('${quote.text} - ${quote.author}'))
-            .toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }
